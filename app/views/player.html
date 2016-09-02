@@ -1,0 +1,368 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12  toppad">
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{player["full name"]}}</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2 " align="center"><img alt="User Pic"
+                                                                        ng-src="{{player['image-src']}}"
+                                                                        class="img-circle img-responsive"></div>
+                    <div class=" col-md-4 col-lg-4 ">
+                        <table class="table table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>Club:</td>
+                                <td><a href="/#/clubs/{{player.clubs}}">{{player.clubs}}</a></td>
+                            </tr>
+                            <tr>
+                                <td>Nation:</td>
+                                <td>{{player["nation"]}}</td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth</td>
+                                <td>{{player["date of birth"]}}</td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td>Weight</td>
+                                <td>{{player.weight}}</td>
+                            </tr>
+                            <tr>
+                                <td>Height</td>
+                                <td>{{player.height}}</td>
+                            </tr>
+                            <tr>
+                                <td>Rating</td>
+                                <td>{{player.rating}}</td>
+                            </tr>
+                            <tr>
+                                <td>Age</td>
+                                <td>{{player.age}}</td>
+                            </tr>
+                            <tr>
+                                <td>Position</td>
+                                <td>{{player["position desc"]}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class=" col-md-4 col-lg-4 ">
+                        <button type="button" class=" col-md-6 col-lg-6 btn btn-primary" ng-repeat="s in skills"
+                                style="text-align: center;margin-top: 1px;">
+                            {{s.skill}}
+                        </button>
+                        <!--<button type="button" class="col-md-6 col-lg-6" ng-class="s.ponder>0 ? 'btn btn-primary' : 'btn btn-default'"   ng-repeat="s in skills" style="text-align: center" ng-click="addSkill(s)">-->
+                        <!--{{s.skill}}-->
+                        <!--</button>-->
+                    </div>
+                    <div class=" col-md-2 col-lg-2 " style="text-align: center">
+                        <table class="table table-user-information">
+                            <tbody style="background-color: #4CAF50;text-align:center">
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['F(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['F(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['F(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['F(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['F(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['F(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['F(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['F(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['F(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['AM(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['AM(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['AM(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['AM(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['AM(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['AM(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['AM(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['AM(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['AM(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['M(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['M(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['M(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['M(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['M(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['M(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['M(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['M(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['M(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['DM(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['DM(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['DM(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['DM(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['DM(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['DM(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['DM(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['DM(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['DM(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['D(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['D(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['D(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['D(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['D(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['D(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['D(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="player['D(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['D(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="visibility: hidden;"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="player['GK'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3" ng-if="player['GK'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="player['GK'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="visibility: hidden;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <span class="glyphicon glyphicon-arrow-left" ng-if='player.left==1'></span>
+                        <span class="glyphicon glyphicon-arrow-right" ng-if='player.right==1'></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-12  toppad">
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 style="display: inline" class="panel-title"><span ng-repeat="player in player.list"
+                                                                      ng-click="setPlayer(player.id)">{{player["full name"]}}&nbsp;/&nbsp;&nbsp;</span>
+                </h3>
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2 " align="center"><a href="/#/players/{{pleja.id}}"><img alt="User Pic"
+                                                                        ng-src="{{pleja['image-src']}}"
+                                                                        class="img-circle img-responsive"></a></div>
+                    <div class=" col-md-4 col-lg-4 ">
+                        <table class="table table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>Club:</td>
+                                <td><a href="/#/clubs/{{pleja.clubs}}">{{pleja.clubs}}</a></td>
+                            </tr>
+                            <tr>
+                                <td>Nation:</td>
+                                <td>{{pleja["nation"]}}</td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth</td>
+                                <td>{{pleja["date of birth"]}}</td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td>Weight</td>
+                                <td>{{pleja.weight}}</td>
+                            </tr>
+                            <tr>
+                                <td>Height</td>
+                                <td>{{pleja.height}}</td>
+                            </tr>
+                            <tr>
+                                <td>Rating</td>
+                                <td>{{pleja.rating}}</td>
+                            </tr>
+                            <tr>
+                                <td>Age</td>
+                                <td>{{pleja.age}}</td>
+                            </tr>
+                            <tr>
+                                <td>Position</td>
+                                <td>{{pleja["position desc"]}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class=" col-md-4 col-lg-4 ">
+                        <button type="button" class=" col-md-6 col-lg-6 btn btn-primary" ng-repeat="s in pleja.skills"
+                                style="text-align: center;margin-top: 1px;">
+                            {{s.skill}}
+                        </button>
+                        <!--<button type="button" class="col-md-6 col-lg-6" ng-class="s.ponder>0 ? 'btn btn-primary' : 'btn btn-default'"   ng-repeat="s in skills" style="text-align: center" ng-click="addSkill(s)">-->
+                        <!--{{s.skill}}-->
+                        <!--</button>-->
+                    </div>
+                    <div class=" col-md-2 col-lg-2 " style="text-align: center">
+                        <table class="table table-user-information">
+                            <tbody style="background-color: #4CAF50;text-align:center">
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['F(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['F(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['F(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['F(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['F(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['F(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['F(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['F(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['F(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['AM(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['AM(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['AM(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['AM(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['AM(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['AM(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['AM(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['AM(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['AM(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['M(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['M(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['M(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['M(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['M(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['M(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['M(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['M(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['M(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['DM(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['DM(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['DM(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['DM(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['DM(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['DM(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['DM(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['DM(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['DM(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['D(L)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['D(L)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['D(L)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['D(C)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['D(C)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['D(C)'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow"
+                                    ng-if="pleja['D(R)'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3"
+                                    ng-if="pleja['D(R)'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray"
+                                    ng-if="pleja['D(R)'] == 0"></td>
+                            </tr>
+                            <tr>
+                                <td class="glyphicon glyphicon-star" style="visibility: hidden;"></td>
+                                <td class="glyphicon glyphicon-star" style="color:yellow" ng-if="pleja['GK'] == 3"></td>
+                                <td class="glyphicon glyphicon-ok" style="color:#ffffb3" ng-if="player['GK'] == 1"></td>
+                                <td class="glyphicon glyphicon-remove" style="color:gray" ng-if="pleja['GK'] == 0"></td>
+                                <td class="glyphicon glyphicon-star" style="visibility: hidden;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <span class="glyphicon glyphicon-arrow-left" ng-if='pleja.left==1'></span>
+                        <span class="glyphicon glyphicon-arrow-right" ng-if='pleja.right==1'></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

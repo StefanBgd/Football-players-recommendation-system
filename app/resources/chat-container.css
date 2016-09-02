@@ -1,0 +1,15 @@
+/*html,body { height: 100%; margin: 0px; padding: 0px; }*/
+.chat-panel {
+    min-height: 85vh;
+    height: 85vh;
+    overflow-y: auto;
+}
+
+.chat-input {
+    min-height: 5vh;
+    height: 5vh;
+}
+
+.pointer {
+    cursor: pointer;
+}

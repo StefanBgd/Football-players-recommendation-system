@@ -1,0 +1,21 @@
+<table class="table table-responsive table-striped table-content text-center">
+    <thead>
+    <tr>
+        <th class="text-center">Name</th>
+        <th class="text-center">Position</th>
+        <th class="text-center">Birth date</th>
+        <th class="text-center">Nation</th>
+        <th class="text-center">Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="player in players">
+        <td><a href="/#/players/{{player.id}}">{{ player['full name']}}</a></td>
+        <td>{{ player["position desc"]}}</td>
+        <td>{{ player["date of birth"]}}</td>
+        <td>{{ player.nation}}</td>
+        <td>{{ player.rating}}</td>
+        <!--<td><button class="btn btn-warning" ng-click="details(player.id)"><i class="glyphicon glyphicon-edit"></i> Details</button></td>-->
+    </tr>
+    </tbody>
+</table>

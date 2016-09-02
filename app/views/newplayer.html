@@ -1,0 +1,119 @@
+<div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-12  toppad">
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <!--<p class="panel-title" class="col-md-6 col-lg-6">{{player["full name"]}}</p>-->
+                <button type="button" class="btn btn-primary" ng-click="save()">
+                   Save
+                </button>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2 " align="center"><img alt="User Pic"
+                                                                        ng-src="{{player['image-src']}}"
+                                                                        class="img-circle img-responsive">
+                        <input ng-model="player['image-src']">
+                    </div>
+                    <div class=" col-md-4 col-lg-4 ">
+                        <table class="table table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td><input class="form-control"  ng-model="player['full name']"></td>
+                            </tr>
+                            <tr>
+                                <td>Club:</td>
+                                <td>
+                                    <select class="form-control" ng-model="player.clubs" ng-options="x for x in clubs">
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td>Nation:</td>
+                                <td><select class="form-control" ng-model="player['nation']" ng-options="x for x in nations">
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth</td>
+                                <td><input class="form-control" ng-model="player['date of birth']"></td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td>Weight</td>
+                                <td><input class="form-control" ng-model="player.weight"></td>
+                            </tr>
+                            <tr>
+                                <td>Height</td>
+                                <td><input class="form-control" ng-model="player.height"></td>
+                            </tr>
+                            <tr>
+                                <td>Rating</td>
+                                <td><input class="form-control" ng-model="player.rating"></td>
+                            </tr>
+                            <tr>
+                                <td>Age</td>
+                                <td><input class="form-control" ng-model="player.age"></td>
+                            </tr>
+                            <tr>
+                                <td>Position</td>
+                                <td><select class="form-control" ng-model="player['position desc']" ng-options="x for x in positions">
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Foot</td>
+                                <td>left <input type="checkbox" ng-model="player['left']"> right <input type="checkbox" ng-model="player['right']"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class=" col-md-4 col-lg-4 ">
+                        <button type="button" class="col-md-6 col-lg-6" ng-class="s.ponder>0 ? 'btn btn-primary' : 'btn btn-default'"   ng-repeat="s in skills" style="text-align: center" ng-click="addSkill(s)">
+                            {{s.skill}}
+                        </button>
+                        <br>
+                    </div>
+                    <div class=" col-md-2 col-lg-2 " style="text-align: center">
+                        <table class="table table-user-information">
+                            <tbody style="background-color: #4CAF50;text-align:center">
+                            <tr>
+                                <td><input type="checkbox" ng-model="player['F(L)']"></td>
+                                <td><input type="checkbox" ng-model="player['F(C)']"></td>
+                                <td><input type="checkbox" ng-model="player['F(R)']"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" ng-model="player['AM(L)']"></td>
+                                <td><input type="checkbox" ng-model="player['AM(C)']"></td>
+                                <td><input type="checkbox" ng-model="player['AM(R)']"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" ng-model="player['M(L)']"></td>
+                                <td><input type="checkbox" ng-model="player['M(C)']"></td>
+                                <td><input type="checkbox" ng-model="player['M(R)']"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" ng-model="player['DM(L)']"></td>
+                                <td><input type="checkbox" ng-model="player['DM(C)']"></td>
+                                <td><input type="checkbox" ng-model="player['DM(R)']"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" ng-model="player['D(L)']"></td>
+                                <td><input type="checkbox" ng-model="player['D(C)']"></td>
+                                <td><input type="checkbox" ng-model="player['D(R)']"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" style="visibility: hidden;"></td>
+                                <td><input type="checkbox" ng-model="player['GK']"></td>
+                                <td><input type="checkbox" style="visibility: hidden;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--<span class="glyphicon glyphicon-arrow-left" ng-model='player.left==1'></span>-->
+                        <!--<span class="glyphicon glyphicon-arrow-right" ng-model='player.right==1'></span>-->
+                    </div>
+                </div>
+            </div>
+            <!--{{player|json}}-->
+        </div>
+    </div>
+</div>
